@@ -1,22 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './style.css';
+import Navbar from './Components/Navbar';
+import { Home, About, Features , Detect} from './Main.js';
 
 function App() {
+  const [activeSection, setActiveSection] = useState('home');
+
   return (
     <div className="App">
+      <div className="overlay"></div>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar setActiveSection={setActiveSection} />
+        <div className="content-wrap">
+          {activeSection === 'home' && <Home />}
+          {activeSection === 'about' && <About />}
+          {activeSection === 'features' && <Features />}
+          {activeSection === 'detect' && <Detect />}
+        </div>
       </header>
     </div>
   );
