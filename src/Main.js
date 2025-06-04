@@ -68,7 +68,7 @@ export function Features(){
 
 export function Detect() {
      const openGradioApp = () => {
-    window.open("http://127.0.0.1:7860", "_blank");
+    window.open("https://huggingface.co/spaces/karunasmiley/Plant-disease-detection", "_blank");
   };
   return (
      <div className="detect-container">
